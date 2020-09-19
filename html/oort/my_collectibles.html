@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>nft-rent-app</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/oort/rent_app.css">
+    <link rel="stylesheet" type="text/css" href="../../css/oort/size.css">
+</head>
+<body>
+
+<!--search and filter-->
+<div id="div_main_collectibles" style="display: none;">
+    <div class="row pl-3">
+        <input class="col-10" type="search" placeholder="Search" aria-label="Search" id="input_search">
+    </div>
+
+    <!--collectibles-->
+    <div class="row mt-4 ml-1">
+        <!--left-->
+        <div class="col-2 p-2" style="border: 1px solid black">
+            <h5 class="text-center">All Collections</h5>
+            <input class="mt-2 col-12" placeholder="Search any collection" id="input_search_collections">
+            <div class="mt-2" id="div_collections" style="min-height: 20rem">
+
+            </div>
+        </div>
+        <!--right-->
+        <div class="col-10" id="div_collectibles">
+
+        </div>
+    </div>
+</div>
+<div class='mt-5' id="loading"></div>
+
+</body>
+<script src="../../js/bundle.js"></script>
+<script src="../../js/jquery-3.4.1.min.js"></script>
+<script src="../../js/jquery.loading.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/oort/common.js"></script>
+<script src="../../js/oort/entity.js"></script>
+<script src="../../js/oort/connect_wallet.js"></script>
+<script src="../../js/oort/my_collectibles.js"></script>
+</html>
