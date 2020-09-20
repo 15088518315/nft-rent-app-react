@@ -1,1 +1,164 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>nft-rent-app</title><link rel=stylesheet type=text/css href=../css/bootstrap.min.css><link rel=stylesheet type=text/css href=../css/oort/rent_app.css><link rel=stylesheet type=text/css href=../css/oort/size.css><link href=css/styles.css rel=stylesheet></head><body><div class="row col-12 pt-2 pb-2 pl-5 pr-5"><div class=col-6><img height=40 src=../image/OORT_DIGITAL-Logo-Combined.png></div><div class=col-6><div class=float-right><div><button id=btn_connect_wallet class="btn btn-primary btn-lg" data-toggle=modal data-target=#dialog_connect_wallet>Connect to a wallet</button></div><div style="visibility:hidden;display: none;"><h6>USER NAME</h6><span id=user_addreess></span></div></div></div></div><div class="modal fade" id=dialog_connect_wallet tabindex=-1 role=dialog aria-labelledby=connectWalletLabel aria-hidden=true><div class=modal-dialog><div class=modal-content><div class="text-center mt-4"><div><img src=../image/OORT-DIGITAL_logo.png width=30px height=30px></div><div><strong class="mt-3 font-size-1_5">Oleasing</strong></div><div><strong class=mt-3>Connect</strong><small> your Wallet and jump into the world of NFT</small></div><div class="mt-3 col-8 offset-2 div-wallet-item p-4" id=div_metaMask data-dismiss=modal><div class="float-left ml-3 text-center center-vertical"><img src=../image/metaMask.png width=30px height=30px> <b class="mt-2 ml-2">MetaMask</b></div><img src=../image/arrow_right.png class="float-right mr-3 center-vertical" width=24px height=24px></div><div class="mt-3 col-8 offset-2 div-wallet-item p-4 mb-5" style=margin-right:5rem id=div_wallectConnect data-dismiss=modal><div class="float-left ml-3 text-center center-vertical"><img src=../image/wallectConnect.png width=15px height=15px> <b class="mt-2 ml-2">MetaMask</b></div><img src=../image/arrow_right.png class="float-right mr-3 center-vertical" width=24px height=24px></div></div></div></div></div><div class="modal fade" id=dialog_account tabindex=-1 role=dialog aria-labelledby=change_account_label aria-hidden=true><div class=modal-dialog><div class="modal-content pl-3 pr-3 pt-3 pb-3"><div><strong class=float-left>Account</strong> <img src=../image/arrow_right.png class=float-right width=24px height=24px data-dismiss=modal></div><div class="pl-2 pr-2 pt-3 pb-3 mt-3 div-border"><div><span class=float-left>Connected with MetaMask</span> <button id=btn_change_account class="btn btn-primary btn-lg float-right btn-change-account" data-dismiss=modal>Change</button></div><div><h3 class="mt-5 font-size-1_5 font-weight-bold" id=font_account></h3></div></div></div></div></div><img class=mt-2 src=../image/wave-1-top-sm.png height=15 width=100%><ul id=ul_nav class="nav nav-pills ml-5 mr-5 mt-1" style="display: none"><li class=nav-item><a class="nav-link active" href=# id=collectibles role=tab data-toggle=tab>My Collectibles</a></li><li class=nav-item><a class=nav-link href=# id=borrow_from_pool role=tab data-toggle=tab>Borrow from Pool</a></li><li class=nav-item><a class=nav-link href=# id=borrowed_assets role=tab data-toggle=tab>Borrowed Assets</a></li><li class=nav-item><a class=nav-link href=#>Lent Assets</a></li><li class=nav-item><a class=nav-link href=#>How It Works</a></li></ul><iframe id=iframe class="pl-5 pr -5 mt-3" allowtransparency=yes frameborder=no border=0 marginwidth=0 marginheight=0 scrolling=no style="width:100%; height:100%; position:absolute; overflow:hidden"></iframe><script type=text/javascript src=js/vendors.js></script><script type=text/javascript src=js/bundle.js></script></body><script src=../js/bundle.js></script><script src=../js/jquery-3.4.1.min.js></script><script src=../js/bootstrap.bundle.min.js></script><script src=../js/bootstrap.min.js></script><script src=../js/oort/entity.js></script><script src=../js/oort/connect_wallet.js></script></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>oort</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/oort/rent_font_end.css">
+    <link rel="stylesheet" type="text/css" href="css/oort/size.css">
+</head>
+<body>
+<!-- Navigation-->
+
+<div class="row col-12 div-header" id="page-top">
+    <div class="row col-6">
+        <a href="#page-top"><img height="40" src="image/OORT_DIGITAL-Logo-Combined.png"></a>
+    </div>
+    <div class="row col-6">
+        <ul class="nav-ul">
+            <li class="nav-li"><a class="text-dark" href="#about">About</a></li>
+            <li class="nav-li"><a class="text-dark" href="#">Docs</a></li>
+            <li class="nav-li"><a class="text-dark" href="#">Blog</a></li>
+            <li class="nav-li">
+                <button class="btn text-white primary-bg-color" onclick="window.location.href='html/main.html'">Sign up/Log in</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--divider-->
+<img class="mt-2" src="image/wave-1-top-sm.png" height="15" width="100%">
+<!-- Masthead-->
+<div class="row div-masthead">
+    <div class="col-6">
+        <div class="text-left center-vertical">
+            <b class="font-size-1_5">The "BANK" For NFTs</b>
+            <p style="font-size: small">The easiest way to play with your non-fungible tokens(NFTs) in one
+                super<br> account. Store and send,borrow,lease,trade and pay. Everything <br>you'd expect from a bank
+                without
+                a bank</p>
+            <h6 class="col- primary-text-color">Subscribe to our mailing list for updates</h6>
+            <form action="xxx" method="post">
+                <div class="row ml-1">
+                    <input class="input-email" type="text" placeholder="Email"/>
+                    <button type="submit" name="submit" class="btn ml-2 text-white primary-bg-color">
+                        Subscribe
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-6 text-center">
+        <img src="image/NFT_Possibilities.png" width="250">
+    </div>
+</div>
+
+<!-- About-->
+<div class="text-left div-about row mt-5" id="about">
+    <b class="font-size-1_2">About Oort Digtal</b>
+    <p style="font-size: small">
+        Oort Digital a DeFi aggregator for NFTs. Oort Digital aims to build an NFT super account with seamless
+        user
+        experience.
+        We believe that NFT has a better chance to introduce cypto to the mainstream then bitcoin. It is beacuse
+        NFT
+        is able to represent things
+        we can better understand, such as in-game items,tickets,houses,cars etc. Our vision is to accelerate the
+        mass
+        adoption of NFTs across the globe.
+    </p>
+</div>
+<img src="image/center_icon5.png" width="35" style="margin-left: 20%">
+<!-- center -->
+<div class="div-center">
+    <div class="row">
+        <div class="col-6">
+            <div>
+                <img src="image/center_icon6.png" width="20" style="margin-left: 45%">
+            </div>
+            <div class="ml-7"><b class="font-size-1_5 ">Try our NFTleasing product </b><b
+                    class="font-size-1_5 primary-text-color">oLeasing</b>
+            </div>
+        </div>
+        <div class="offset-3">
+            <img src="image/center_icon4.png" width="83">
+        </div>
+    </div>
+    <div class="mt-5">
+        <div class="text-center div-oLeasing-features">
+            <img src="image/center_icon3.png" width="100" style="position: relative;top: -5%;right: 30%">
+            <img src="image/center_icon2.png" width="30" style="position: relative;top:20%;left: 20%">
+        </div>
+        <div class="text-center">
+            <button class="btn text-white primary-bg-color mt-5">Get Started</button>
+        </div>
+        <div class="ml-9 mt-2">
+            <img src="image/center_icon1.png" width="60">
+        </div>
+        <div class="text-center">
+            <h2>Challenges We Aim to Solve</h2>
+        </div>
+        <div class="row mt-5">
+            <div class="div-round pl-1 pr-1">
+                <h2 class="mt-3">01</h2>
+                <h5 class="mt-3">Valuation</h5>
+                <p class="mt-2 small">Valuing a certian NFT is difficult due to its unique properties.</p>
+            </div>
+            <div class="div-round pl-1 pr-1">
+                <h2 class="mt-3">02</h2>
+                <h5 class="mt-3">Liquidity</h5>
+                <p class="mt-2 small">Due to the difficulty of NFT valuation,it usually takes a much longer time
+                    to match the buyers and sellers.</p>
+            </div>
+            <div class="div-round pl-1 pr-1">
+                <h2 class="mt-3">03</h2>
+                <h5 class="mt-3">User Experience</h5>
+                <p class="mt-2 small">Decentralized applications are difficult to access for most people.</p>
+            </div>
+        </div>
+    </div>
+    <img class="mt-4" src="image/center_icon7.png" width="35" style="margin-left: 20%">
+</div>
+<!--bottom-->
+<div class="div-bottom">
+    <img src="image/center_icon2.png" width="10">
+    <h5 class="mt-2 primary-text-color">Ultimately,Oort Digital aims to be an NFT Super Account</h5>
+    <div class="div-bottom-cicle mt-4">
+        <img src="image/div_bottom_icon2.png" style="position: relative;top:30%;right:15%" width="90">
+        <img src="image/div_bottom_icon1.png" style="position: relative;top:70%;left:15% " width="90">
+    </div>
+    <div class="div-bottom-bottom">
+        <div style="position: relative;top:55%">
+            <div class="row">
+                <div class="m-auto row">
+                    <div>
+                        <img width="40px" height="39px" src="image/OORT_DIGITAL_WHITE_LOGO.png" class="mr-2"><b class="text-white">OORT
+                        DIGITAL</b>
+                    </div>
+                    <div class="row" style="margin-left: 10rem;margin-right: 10rem;">
+                        <a class="a-share" target="_blank" style="background-image: url('image/medium_logo.png');"
+                           href="https://medium.com/oort-digital"></a>
+                        <a class="a-share" target="_blank" style="background-image: url('image/twitter_logo.png')"
+                           href="https://twitter.com/OortDigital"></a>
+                        <a class="a-share" target="_blank" style="background-image: url('image/reddit_logo.png')"
+                           href="https://www.reddit.com/user/oortdigital728"></a>
+                        <a class="a-share" target="_blank" style="background-image: url('image/discord_logo.png')"
+                           href="https://discord.gg/KbZWMv"></a>
+                        <a class="a-share" target="_blank" style="background-image: url('image/github_logo.png')"
+                           href="https://github.com/oort-digital/nft_rent"></a>
+                        <a class="a-share" target="_blank" style="background-image: url('image/wechat_logo.png')"
+                           href="#"></a>
+                    </div>
+                    <div>
+                        <b class="float-left text-white">Contact Us:</b><br>
+                        <b class="primary-text-color">Oortdigital728@gmail.com</b>
+                    </div>
+                </div>
+            </div>
+            <h6 class="mt-3 text-white">@2020 Oort Digital.All Rights Reserved.</h6>
+        </div>
+    </div>
+</div>
+</body>
+</html>
